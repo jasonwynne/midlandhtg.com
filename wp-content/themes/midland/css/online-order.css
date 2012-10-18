@@ -1,0 +1,28 @@
+/***************************************
+
+	Client: Midland Heating & Air Conditioning Online Order Model	
+	Date Started: 9/25/2012
+	Author: Jason Wynne
+	
+	Colors ------------
+		grey #7d7d7d - hover:#c0c0c0;
+		red #ff0012
+
+	Font --------------
+		font-family: 'LatoRegular', arial, san-serif;
+		font-family: 'LatoItalic';
+		font-family: 'LatoLightRegular';
+		font-family: 'LatoBold';
+		font-family: 'VollkornRegularRegular';
+
+****************************************/
+/*******************************************************************************************************  Online-ordering page  */ 
+
+
+.content-holder-all {
+	min-height: 500px;
+}
+
+.order-content {
+	width: 75%;
+}
