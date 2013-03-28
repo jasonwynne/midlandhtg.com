@@ -1,6 +1,6 @@
 h1{
 	font-family: 'LatoLightRegular';
-	font-size: 3.7em;
+	font-size: 3.0em;
 	letter-spacing: -1px;
 }
 
@@ -12,6 +12,10 @@ h2{
 h3{
 	font-size: 2em;
 	font-family: 'LatoBold';
+}
+
+h4{
+	
 }
 
 h5{

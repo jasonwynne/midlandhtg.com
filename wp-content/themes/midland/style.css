@@ -1,7 +1,7 @@
 /*
 Theme Name: Midland Heating & Air Conditioning
 Description: Custom Build.
-Version: 0.1
+Version: 1.1 
 Author: Jason Wynne
 Tags: Heating, Air Conditioning, Filters
 */
@@ -11,5 +11,6 @@ Tags: Heating, Air Conditioning, Filters
 @import "css/global.css";
 @import "css/layout.css";
 @import "css/lennoxstyles.css";
-@import "css/online-order.css";
+@import "css/ordering.css";
+@import "js/fancybox/jquery.fancybox.css";
 @import "css/font/all-font-styles.css";

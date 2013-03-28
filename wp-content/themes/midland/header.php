@@ -13,7 +13,9 @@
 
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/global.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.timer.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/ordering.js"></script>
 
 <!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/ie8.css" />

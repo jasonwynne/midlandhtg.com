@@ -118,35 +118,6 @@ class acf_Image extends acf_Field
 	    return($vars);
 	}
 	
-   	
-   	/*--------------------------------------------------------------------------------------
-	*
-	*	admin_print_scripts / admin_print_styles
-	*
-	*	@author Elliot Condon
-	*	@since 3.0.0
-	* 
-	*-------------------------------------------------------------------------------------*/
-	
-	function admin_print_scripts()
-	{
-		wp_enqueue_script(array(
-			'jquery',
-			'jquery-ui-core',
-			'jquery-ui-tabs',
-
-			'thickbox',
-			'media-upload',			
-		));
-	}
-	
-	function admin_print_styles()
-	{
-  		wp_enqueue_style(array(
-			'thickbox',		
-		));
-	}
-	
 	
 	/*--------------------------------------------------------------------------------------
 	*
@@ -398,7 +369,7 @@ class acf_Image extends acf_Field
 				
 				
 				// update acf_div
-				div.find('input.value').val( item.id );
+				div.find('input.value').val( item.id ).trigger('change');
 	 			div.find('img').attr( 'src', item.url );
 	 			div.addClass('active');
 	 	
@@ -458,7 +429,7 @@ class acf_Image extends acf_Field
 			$.each(json, function(i ,item){
 			
 				// update acf_div
-				self.parent.acf_div.find('input.value').val( item.id ); 
+				self.parent.acf_div.find('input.value').val( item.id ).trigger('change'); 
 	 			self.parent.acf_div.find('img').attr('src', item.url ); 
 	 			self.parent.acf_div.addClass('active'); 
 	 	 
@@ -646,6 +617,14 @@ class acf_Image extends acf_Field
 		elseif($format == 'object')
 		{
 			$attachment = get_post( $value );
+			
+			
+			// validate
+			if( !$attachment )
+			{
+				return false;	
+			}
+			
 			
 			// create array to hold value data
 			$value = array(

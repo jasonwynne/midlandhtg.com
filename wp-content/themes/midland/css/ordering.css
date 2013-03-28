@@ -1,0 +1,334 @@
+/***************************************
+
+	Client: Midland Heating & Air Conditioning Online Order Model	
+	Date Started: 3/2/2013
+	Author: Jason Wynne
+	
+	Colors ------------
+		grey #7d7d7d - hover:#c0c0c0;
+		red #ff0012
+
+	Font --------------
+		font-family: 'LatoRegular', arial, san-serif;
+		font-family: 'LatoItalic';
+		font-family: 'LatoLightRegular';
+		font-family: 'LatoBold';
+		font-family: 'VollkornRegularRegular';
+
+****************************************/
+/*******************************************************************************************************  Online-ordering page  */ 
+
+.ordering-template {
+
+}
+
+input[type='radio'],
+input[type='checkbox'],
+label {
+	cursor: pointer;
+}
+
+
+.ordering-template .hidden {
+	display: none;
+}
+
+.content-holder-all {
+	min-height: 500px;
+}
+
+.order-header {
+	width: 75%;
+	min-height: 100px;
+	
+}
+
+.order-steps-holder {
+	height: 40px;
+	background: #e1e1e1;
+	overflow: hidden;
+	border: 1px solid #a7a7a7;
+	width: 957px;
+	margin-bottom: 20px;
+}
+
+.order-steps-holder ul {
+		width: 959px;
+}
+
+.order-steps-holder ul li {
+	float: left;
+	font-size: 15px;
+	line-height: 40px;
+	padding: 0 20px 0 33px;
+	color: #fff;
+	background:#a7a7a7;
+}
+
+.order-steps-holder ul li.step1 {
+	padding: 0 20px;
+}
+
+.order-steps-holder ul li.step5 {
+	padding: 0 25px 0 33px;
+}
+
+.order-steps-holder ul li.active {
+	background: #e1e1e1 url('../images/ordering/step-arrow-left.png') left 0 no-repeat;
+	color: #666666;
+}
+
+.order-steps-holder ul li.active.step1 {
+	background: #e1e1e1;
+}
+
+
+.order-steps-holder ul li.next-step {
+	background: #a7a7a7 url('../images/ordering/next-step-arrow.png') left 0 no-repeat;
+}
+
+
+#order-info-holder {
+	width: 215px;
+	float: left;
+	min-height: 50px;
+	padding: 0 15px 0 20px;
+}
+
+#order-info-holder h4 {
+	font-size: 1.4em;
+	font-family: 'LatoBold';
+	text-transform: uppercase;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #666;
+}
+
+.product-info-holder {
+	padding: 5px 0;
+}
+
+.order-holder {
+	width: 670px;
+	float: right;
+	border-left: 1px solid #a7a7a7;
+	padding: 0 15px;
+	min-height: 270px;
+}
+
+.order-holder h3 {
+	margin-bottom: 8px
+}
+
+
+.total {
+	font-size: 1.6em;
+	padding-bottom: 4px;
+	font-family: 'LatoBold';
+	text-transform: uppercase;
+}
+
+
+.step-product-holder {
+	margin-bottom: 15px;
+}
+
+p.checkbox-holder {
+	float: left;
+	padding-right: 20px;
+}
+
+p.checkbox-holder input {
+	margin-right: 10px;
+}
+
+.product-brand-holder {
+	margin-top: 15px;
+}
+
+.order-holder .question-holder,
+.order-holder .existing {
+	margin-top: 15px;
+}
+
+.product-brand-holder:first-child {
+	margin-top: 0px;
+}
+
+.product-type > div,
+.house-info > div,
+.existing-info > div {
+	padding: 3px;
+	font-size: 12px;
+}
+
+
+a.btn-finish,
+.btn-holders a,
+a.btn-more-options {
+	border: 1px solid #666666;
+  height: 30px;
+  overflow: hidden;
+  padding: 0 10px;
+  margin: 0 0 0 10px;
+  line-height: 30px;
+	float: right;
+	color: #fff;
+	font-size: 15px;
+	background: #c0bfbf url('../images/ordering/bkg-btn-grey.gif') 0 0 repeat-x;
+	-webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a.btn-finish:hover,
+.btn-holders a:hover,
+a.btn-more-options:hover {
+		background: #666666;
+}
+
+
+.btn-holders a {
+
+}
+
+.more-options-btn {
+	margin-top: 20px;
+}	
+
+p.more-info {
+	font-size: 10px;
+	line-height: 14px;
+}
+
+.exisiting p img {
+	border: 1px solid #666;
+	margin-top: 10px;
+}
+
+p.checkbox-holder label img {
+	margin-top: 8px;
+}	
+
+.recommended-product {
+ 	padding: 15px 10px;
+ 	margin: 0;
+ 	cursor: pointer;
+ 	border-bottom: 1px solid #ccc;
+ 	
+}
+
+.recommended-product:hover {
+	background-color: #eeeeee;
+}
+
+input#rp-selected {
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+
+.recommended-product h3 {
+	font-size: 15px;
+	text-transform: uppercase;
+}
+
+.rp-title {
+	float: left;
+}
+
+
+
+h3.total-cost {
+	float: right;
+}
+
+.recommended-product img {
+	margin: 8px;
+	height: 50px;
+	width: 50px;
+	float: left;
+	border: 1px solid #ccc;
+}
+
+p.rp-snipit {
+	float: left;
+	width: 580px;
+	line-height: 16px;
+	padding-top:10px;
+}
+
+a.rp-learn-more-btn {
+	font-size: 11px;
+	text-transform: uppercase;
+	font-family: 'LatoBold';
+	padding-left: 5px;
+}
+
+div.btn-product,
+a.btn-brochure {
+	font-size: 11px;
+	text-transform: uppercase;
+	font-family: 'LatoBold';
+	display: block;
+	color: #1E1E1E;
+	padding: 2px 15px;
+	float: left;
+	border-left: 1px solid #666;
+}
+
+div.btn-product.first {
+	border-left: none;
+	padding-left: 66px;
+}
+
+div.btn-product:hover,
+a.btn-brochure:hover{
+	color:#9f9f9f;
+}
+
+#prodPop {
+	width: 500px;
+	min-height: 150px;
+	max-height: 500px;
+	padding: 25px;
+	color: #666666;
+}
+
+#prodPop h3 {
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+#prodPop h4 {
+	font-family: 'LatoBold';
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+
+#prodPop p {
+	margin-bottom: 5px;
+}
+
+#prodPop p ul {
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+#prodPop p ul li {
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+#prodPop a{
+	color: #1e1e1e;
+	text-decoration: underline;
+}
+
+#prodPop a:hover{
+	color:#9f9f9f;
+}
+
+.step3-content .btn-holders {
+	margin-top: 20px
+}

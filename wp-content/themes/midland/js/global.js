@@ -138,6 +138,10 @@ $(document).ready(function(){
 		$("html:not(:animated),body:not(:animated)").animate({ scrollTop: 0}, 1200, 'easeInOutCubic' );
 	});		
 
+
+	$('li:first-child').addClass('first-item');
+	$('li:last-child').addClass('last-item');	
+
 });// END doc ready
 
 
