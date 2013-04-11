@@ -154,11 +154,10 @@ p.checkbox-holder input {
 	margin-top: 0px;
 }
 
-.product-type > div,
-.house-info > div,
-.existing-info > div {
+.order-info > div {
 	padding: 3px;
 	font-size: 12px;
+	text-transform: capitalize;
 }
 
 
@@ -195,9 +194,11 @@ a.btn-more-options:hover {
 	margin-top: 20px;
 }	
 
-p.more-info {
-	font-size: 10px;
+p.more-info,
+.existing-cost-explain {
+	font-size: 12px;
 	line-height: 14px;
+	padding-bottom: 10px;
 }
 
 .exisiting p img {
@@ -209,7 +210,8 @@ p.checkbox-holder label img {
 	margin-top: 8px;
 }	
 
-.recommended-product {
+.recommended-product,
+.add-on-product {
  	padding: 15px 10px;
  	margin: 0;
  	cursor: pointer;
@@ -217,17 +219,20 @@ p.checkbox-holder label img {
  	
 }
 
-.recommended-product:hover {
+.recommended-product:hover,
+.add-on-product:hover {
 	background-color: #eeeeee;
 }
 
-input#rp-selected {
+input#rp-selected,
+input.ao-selected {
 	float: left;
 	margin: 0 5px 0 0;
 }
 
 
-.recommended-product h3 {
+.recommended-product h3,
+.add-on-product h3 {
 	font-size: 15px;
 	text-transform: uppercase;
 }
@@ -242,7 +247,8 @@ h3.total-cost {
 	float: right;
 }
 
-.recommended-product img {
+.recommended-product img,
+.add-on-product img {
 	margin: 8px;
 	height: 50px;
 	width: 50px;
@@ -332,3 +338,96 @@ a.btn-brochure:hover{
 .step3-content .btn-holders {
 	margin-top: 20px
 }
+
+span.prodID {
+	padding-top: 8px;
+} 
+
+.ao-holder, 
+.ao-product-holder {
+	margin-bottom: 20px;
+}	
+
+.ao-checkbox-holder {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.ao-checkbox-holder input{
+	width: 14px;
+	height: 14px;
+	margin: 1px 0;
+	float: left;
+}
+
+.ao-checkbox-holder p {	
+	float: left;
+	margin-left: 10px;
+	width: 630px;
+	line-height: 18px;
+	
+}
+
+.step3-content h3{
+	padding-top: 15px;
+}
+
+#personal-info-holder {
+	padding: 0 20px 20px;
+}
+
+.personal-info {
+	padding: 5px 0;
+}
+
+.personal-info label {
+	font-size: 14px;
+	line-height: 30px;
+	width: 50px;
+	display: block;
+	padding-right: 10px;
+	text-align: right;
+	float: left;
+}
+
+.personal-info input {
+	float: left;
+	width: 300px;
+	padding: 5px;
+	color: #666;
+	font-family: arial, san-serif;
+}
+
+#place-order a {
+	border: 1px solid #666666;
+  height: 30px;
+  overflow: hidden;
+  padding: 0 10px;
+  margin: 0 0 0 10px;
+  line-height: 30px;
+	float: right;
+	color: #fff;
+	font-size: 15px;
+	background: #c0bfbf url('../images/ordering/bkg-btn-grey.gif') 0 0 repeat-x;
+	-webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#place-order a:hover {
+background: #666666;
+}
+
+p.order-disclaimer {
+	margin-bottom: 8px;
+}
+
+p.error-msg {
+	color: red;
+	padding: 0px 15px;
+	float: left;
+	width: 200px;
+	line-height: 30px;
+	display: none;
+}	
