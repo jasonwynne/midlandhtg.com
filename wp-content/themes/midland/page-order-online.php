@@ -152,8 +152,8 @@
 						<div class="existing boiler hidden">
 							<h3>Tell Us About your Existing Boiler</h3>
 							<p class="step-instructions">Select the picture that most looks like your current boiler:</p>
-							<p class="checkbox-holder"><input id="existing-boiler1" type="radio" name="boiler" value="Gravity"><label for="existing-boiler1">Gravity Boiler<br /><img src="<?php bloginfo('template_directory'); ?>/images/ordering/fpo-image.jpg" /></label></p>
-							<p class="checkbox-holder"><input id="existing-boiler2" type="radio" name="boiler" value="Tall Metal" data-additional-cost="300"><label for="existing-boiler2">Tall Metal Boiler<br /><img src="<?php bloginfo('template_directory'); ?>/images/ordering/fpo-image.jpg" /></label></p>
+							<p class="checkbox-holder"><input id="existing-boiler1" type="radio" name="boiler" value="Gravity"><label for="existing-boiler1">Gravity Boiler<br /><img src="<?php bloginfo('template_directory'); ?>/images/ordering/boiler-gravity.jpg" /></label></p>
+							<p class="checkbox-holder"><input id="existing-boiler2" type="radio" name="boiler" value="Tall Metal" data-additional-cost="300"><label for="existing-boiler2">Tall Metal Boiler<br /><img src="<?php bloginfo('template_directory'); ?>/images/ordering/boiler-tall-metal.jpg" /></label></p>
 							<p class="checkbox-holder"><input id="existing-boiler3" type="radio" name="boiler" value="Modern"><label for="existing-boiler3">Modern Boiler<br /><img src="<?php bloginfo('template_directory'); ?>/images/ordering/boiler-modern.jpg" /></label></p>
 							<div class="clear"></div>
 						</div>

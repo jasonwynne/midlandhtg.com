@@ -101,6 +101,47 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
+= 4.1.5.1 =
+* Image field: Fixed JS error causing uploader to not work correctly
+* File field: Fixed JS error causing uploader to not work correctly
+* Gallery field: Fixed JS error causing uploader to not work correctly
+* General: Fixed JS error causing field groups to not appear when dynamically loaded
+
+= 4.1.5 =
+* WYSIWYG Field: Fixed WYSIWYG the_content / shortcode issues - http://support.advancedcustomfields.com/discussion/5939/inconsistencies-between-standard-wysiwyg-and-acf-wysiwyg
+* Image field: Added option for library restriction - http://support.advancedcustomfields.com/discussion/6102/making-uploaded-to-this-post-default-state-for-image-upload
+* File field: Added option for library restriction
+* File field: Field UI refresh
+* Checkbox field: Added horizontal option - http://support.advancedcustomfields.com/discussion/5925/horizontal-select-boxes
+* Image field: fixed UI bug when image is deleted in file system - http://support.advancedcustomfields.com/discussion/5988/provide-a-fallback-if-
+* Validation: Added support for email field - http://support.advancedcustomfields.com/discussion/6125/email-field-required-validation-on-submit
+* Validation: Added support for taxonomy field - http://support.advancedcustomfields.com/discussion/6169/validation-of-taxonomy-field
+* Language: Added Chinese Translation - https://github.com/elliotcondon/acf/pull/63
+* General: Added changelog message to update plugin screen
+* General: Lots of minor improvements
+
+= 4.1.4 =
+* [Fixed] Page Link: Fixed errors produced by recent changes to post object field - http://support.advancedcustomfields.com/discussion/6044/page-links-hierarchy-broken-and-does-not-order-correctly
+
+= 4.1.3 =
+* [Fixed] Relationship field: Fix global $post conflict issues - http://support.advancedcustomfields.com/discussion/6022/bug-with-4-1-2-acf-rewrite-global-post
+
+= 4.1.2 =
+* [Added] Post Object field: Add filter to customize choices - http://support.advancedcustomfields.com/discussion/5883/show-extra-post-info-in-a-post-object-dropdown-list
+* [Fixed] Relationship field: Fix error when used as grand child - http://support.advancedcustomfields.com/discussion/5898/in_array-errors-on-relationship-field
+* [Added] User field: Add sanitisation into update_value function to allow for array / object with ID attribute
+* [Added] Relationship field: Add sanitisation into update_value function to allow for array of post object to be saved
+* [Added] Post Object field: Add sanitisation into update_value function to allow for a post object or an array of post objects to be saved
+* [Added] Image field: Add sanitisation into update_value function to allow for a post object or an image array to be saved
+* [Added] File field: Add sanitisation into update_value function to allow for a post object or an file array to be saved
+* [Fixed] Revisions: Fix PHP warning if array value exists as custom field - http://support.advancedcustomfields.com/discussion/984/solvedwarning-htmlspecialchars-text-php-on-line-109
+* [Updated] Translation: Update French Translation - http://support.advancedcustomfields.com/discussion/5927/french-translation-for-4-1-1
+* [Fixed] General: Minor PHP errors fixed
+
+= 4.1.1 =
+* [Fixed] Relationship field: Fix bug causing sub field to not load $field object / use elements option correctly
+* [Updated] Update German translations
+
 = 4.1.0 =
 * [Added] Field group: location rules can now be grouped into AND / OR statements
 * [Added] Relationship field: Add option for filters (search / post_type)
