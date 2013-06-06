@@ -1,8 +1,28 @@
 <?php 
 
-require( $_SERVER['DOCUMENT_ROOT'].'/wp-load.php' );
+require('../../../wp-load.php' );
 include_once('phpToPDF.php');
-		
+
+$today = date('F j, Y');
+$name = 	$_POST["name"];
+$address = $_POST["address"];
+$phone = $_POST["phone"];
+$city = $_POST["city"];
+$zip = $_POST["zip"];
+$mainProd = $_POST["mainProd"];
+$mainProdID = $_POST["mainProdID"];
+$mainProdCost = $_POST["mainProdCost"];
+$prodAOCost = $_POST["prodAOCost"];
+$prodAOs = $_POST["prodAOs"];
+$addCost = $_POST["addCost"];
+$addItems = $_POST["addItems"];	
+$totalCost = $_POST["totalCost"];
+
+$email = $_POST["email"];
+$myHome = $_POST["myHome"];
+
+
+	
 $html = '<!DOCTYPE html>
 					<html lang="en">
 					<head>
@@ -28,20 +48,21 @@ $html = '<!DOCTYPE html>
 								.order-main {margin: 10px;}
 								table {border:1px solid #666; margin: 15px 0px; padding:0;}
 								th { padding: 1% 2%; border-bottom: 1px solid #666; margin:0;}
-								td {padding: 1% 2%; }
+								td {padding: 1% 2%;vertical-align:top; }
 								tfoot td{font-weight: bold; border-top: 1px solid #666;}
 								.order-terms {margin: 20px 0;}
 								.order-terms h3 {padding: 0 0 10px 0; border-bottom: 1px solid #666;}
 								ol {padding: 5px 15px 5px 30px; margin:0;}
 								ol li {padding: 3px 0;font-size:11px;}
+								.caps {text-transform: capitalize;}
 							-->
 						</style>
 					</head>
 					<body>
 						<div id="header">
-							<img src="images/print/header-logo.jpg"/>
+							<img src="http://www.midlandhtg.com/wp-content/themes/midland/images/print/header-logo.jpg"/>
 							<div class="right-holder">
-								<div class="address">the date goes here<br/>413 W 60th Street<br/>Minneapolis, MN 55419<br/>612-869-3213</div>
+								<div class="address">'.$today.'<br/>413 W 60th Street<br/>Minneapolis, MN 55419<br/>612-869-3213</div>
 							</div>
 							<div class="clear"></div>
 							<div class="tagline">Warming Winter & Cooling Summer Since 1950</div>
@@ -49,12 +70,12 @@ $html = '<!DOCTYPE html>
 						<div class="order-holder">
 							<div class="order-head">
 								<div class="order-head-left">
-									<p><b>Name:</b> Jason Wynne</p>
-									<p><b>Phone:</b> 651-491-5774</p>
+									<p><b>Name:</b> '.$name.'</p>
+									<p><b>Phone:</b> '.$phone.'</p>
 								</div>
 								<div class="order-head-right">
 									<p><b>Address:</b></p>
-									<p class="addy-holder">4601 Wentworth Ave<br/>Minneapolis, MN 55419</p>
+									<p class="addy-holder">'.$address.'<br/>'.$city.', MN '.$zip.'</p>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -63,7 +84,7 @@ $html = '<!DOCTYPE html>
 								<table width="100%" >
 									<thead>
 										<tr>
-											<th width="20%" style="text-align: left;">Product Type</th>
+											<th width="30%" style="text-align: left;">Product Type</th>
 											<th width="50%" style="text-align: left;">Product Name</th>
 											<th style="text-align: left;">Cost</th>
 										<tr>
@@ -71,20 +92,25 @@ $html = '<!DOCTYPE html>
 									<tfoot>
 										<tr>
 											<td colspan=2 style="text-align: right;">Total:</td>
-											<td>$5354.00</td>
+											<td>'.$totalCost.'</td>
 										</tr>
 									
 									</tfoot>
 									<tbody>
 											<tr>
-												<td>Furnace</td>
-												<td>Lennox SLP98UH070XV36B</td>
-												<td>$3970.00</td>
+												<td class="caps">'.$mainProd.'</td>
+												<td>'.$mainProdID.'</td>
+												<td>$'.$mainProdCost.'.00</td>
 											</tr>
 											<tr>
-												<td>Furnace</td>
-												<td>Lennox SLP98UH070XV36B</td>
-												<td>$3970.00</td>
+												<td>Additional Costs</td>
+												<td>'.$addItems.'</td>
+												<td>$'.$addCost.'.00</td>
+											</tr>		
+											<tr>
+												<td>Additional Products</td>
+												<td>'.$prodAOs.'</td>
+												<td>$'.$prodAOCost.'.00</td>
 											</tr>		
 									</tbody>
 					
@@ -115,19 +141,41 @@ $html = '<!DOCTYPE html>
 					
 						
 					</body>
-					</html>'	
+					</html>';
 
 
-		//$fileTitle = strtolower($title);
-		//$filePDFName = str_replace(' ', '-',$fileTitle );
 		
-		
-		$filePDFName = 'wynne-order';
+
+		$filePDFName = 'midland_order';
 			
-		unlink("pdf/" .$filePDFName.'.pdf');
-			
+		unlink('pdf/' .$filePDFName.'.pdf');			
 		phptopdf_html($html, 'pdf/',  $filePDFName.'.pdf');
-		$isThere = file_exists('pdf/' .$filePDFName.'.pdf');					
+		$isThere = file_exists('pdf/' .$filePDFName.'.pdf');
+		
+		
 
+		//$to = 'tom@midlandhtg.com';
+		$to  = 'tom@midlandhtg.com' . ', ';
+		$to .= $email;
+
+		$headers[] = 'From: Order Placed <orderform@midlandhtg.com>';
+		$subject = $name . ' has placed an order';
+		
+		
+		$attachments = array(WP_CONTENT_DIR . '/themes/midland/pdf/' .$filePDFName. '.pdf'); 		
+		$message = "Date: " . $today . " \n";	
+		$message .= "Email:  " . $email;
+		$message .= "Name:  " . $name;
+		$message .= "Ordered:  " . $mainProdID . "\n";
+		$message .= "Phone:  " . $phone . "\n";
+		$message .= "Existing Home Info:\n" . $myHome . "\n";
+	
+		wp_mail( $to, $subject, $message, $headers, $attachments );
+ 									
+ 	
+ 		echo $isThere;
+
+		
+		
 
 ?>

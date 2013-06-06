@@ -169,6 +169,7 @@ function orderPageActions(){
 	});
 
 // end of step 2
+
 $('a.btn-finish-step2').click(function(evt) {
 		evt.preventDefault();
 		var myStep = parseInt($(this).attr('data-step'));
@@ -190,7 +191,6 @@ $('a.btn-finish-step2').click(function(evt) {
 					var orderTypes = '#'+myProduct+'-recommendations';	
 					$(orderTypes).removeClass('hidden');
 					
-					
 					if(myProduct == 'water-heater'){
 						$(orderTypes).attr('data-gal', 'gal'+myGal);	
 					}else{
@@ -203,13 +203,13 @@ $('a.btn-finish-step2').click(function(evt) {
 						var isHE = $(this).attr('data-he');
 						var brandName = $(this).attr('data-product-brand');
 						brandName = brandName.replace(' ','-');
-						brandName = brandName.toLowerCase();	
+						brandName = brandName.toLowerCase();
 						
 						if(myHE != 'both'){
-							if($(this).hasClass(mySqFtNum) && myBrand == brandName && myProduct != 'water-heater' &&  myHE == isHE) {
+							if($(this).hasClass(mySqFtNum) && myBrand == brandName && myProduct != 'water-heater' &&  isHE == myHE) {
 								$(this).removeClass('hidden');				
 							}
-							if($(this).hasClass('gal'+myGal) && myBrand == brandName && myProduct == 'water-heater' &&  myHE == isHE) {
+							if($(this).hasClass('gal'+myGal) && myBrand == brandName && myProduct == 'water-heater' &&  isHE == myHE) {
 								$(this).removeClass('hidden');	
 							}
 						}else{
@@ -221,7 +221,24 @@ $('a.btn-finish-step2').click(function(evt) {
 							}
 						}
 						
-					});						
+					});
+					
+
+					
+					
+					$('#my-existing .existing-info div').each(function(){
+
+						if($(this).hasAttr('data-additional-cost')){					
+							var hasAdditional = $(this).attr('data-additional-cost');
+							hasAdditional = parseInt(hasAdditional);
+							addCost = addCost+hasAdditional;
+						}
+							
+					});
+					
+					$('#order-info-holder .total').attr('additional-cost', addCost );
+					
+					
 					
 			}else if(myCount-countActive==countAnwsered && myProduct == 'combo'){
 			
@@ -229,39 +246,30 @@ $('a.btn-finish-step2').click(function(evt) {
 				$('#furnace-recommendations, #air-conditioner-recommendations').removeClass('hidden');
 				$('#furnace-recommendations .recommended-product, #air-conditioner-recommendations .recommended-product').each(function(){
 					var brandName = $(this).attr('data-product-brand');
-					brandName = brandName.replace(' ','-');
-					brandName = brandName.toLowerCase();
-					var isHE = $(this).attr('data-he');
-					
-					if(myHE != 'both'){	
-						if($(this).hasClass(mySqFtNum) && myBrand == brandName && myHE == isHE) {
-								$(this).removeClass('hidden');				
-							}
-					}else{
-						if($(this).hasClass(mySqFtNum) && myBrand == brandName) {
-								$(this).removeClass('hidden');				
-							}
-					}
+					if($(this).hasClass(mySqFtNum) && myBrand == brandName.toLowerCase()) {
+							$(this).removeClass('hidden');				
+						}
 					
 				});
 				
+				
+				$('#my-existing .existing-info div').each(function(){
+
+						if($(this).hasAttr('data-additional-cost')){
+						
+							var hasAdditional = $(this).attr('data-additional-cost');
+							hasAdditional = parseInt(hasAdditional);
+							addCost = addCost+hasAdditional;
+
+						}
+							
+					});
+					
+					$('#order-info-holder .total').attr('additional-cost', addCost );
 			
 			}else{
 				alert('Please Answer All of the Questions' );
 			}	
-			
-			
-			$('#my-existing .existing-info div').each(function(){
-
-				if($(this).hasAttr('data-additional-cost')){					
-					var hasAdditional = $(this).attr('data-additional-cost');
-					hasAdditional = parseInt(hasAdditional);
-					addCost = addCost+hasAdditional;
-				}
-					
-			});
-			
-			$('#order-info-holder .total').attr('additional-cost', addCost );
 
 
 	});
@@ -290,6 +298,10 @@ $('a.btn-finish-step2').click(function(evt) {
 			}
 	});
 	
+	$('.recommended-product input').click(function(){
+		$('.recommended-product').trigger('click');
+	});
+	
 	
 	// end step 3
 		$('a.btn-finish-step3').click(function(){
@@ -300,11 +312,9 @@ $('a.btn-finish-step2').click(function(evt) {
 				var selectedID = $(this).attr('data-product-id');
 				var selectedProdBrand = $(this).attr('data-product-brand');
 				var selectedCost = $(this).attr('data-product-cost');	
-				var costExpanded = parseInt(selectedCost);
-				costExpanded = costExpanded.toFixed(2);
 				selectedCost = parseInt(selectedCost);
 				prodPrice = prodPrice+selectedCost;
-				$('#my-selection .selection-info').append('<div class="prod-selected" data-prod-id="'+selectedID+'" data-prod-cost="'+selectedCost+'" >'+selectedProdBrand+' '+selectedID+' $'+costExpanded+'</div>');
+				$('#my-selection .selection-info').append('<div class="prod-selected" data-prod-id="'+selectedID+'" data-prod-cost="'+selectedCost+'" >'+selectedProdBrand+' '+selectedID+'</div>');
 				
 			});
 			
@@ -325,15 +335,11 @@ $('a.btn-finish-step2').click(function(evt) {
 		$('#my-add-ons').removeClass('hidden');
 		if(aoShow != 'none'){	
 			$('input#none-check').prop('checked', false);
-			$('input#none-check').parent().removeClass('selected');
-			if($(this).hasClass('selected')){	
+			if($(this).hasClass('selected')){
 				$(this).children('input[name="ao-product"]').prop('checked', false);
 				$(this).removeClass('selected');
 				$('#'+aoShow+'-holder').addClass('hidden');
-				var anySelected = $('.ao-holder .selected').length;
-				if(anySelected == 0){		
-					$('.step4-content .btn-holders').addClass('hidden');
-				}
+				$('.step4-content .btn-holders').addClass('hidden');
 				$('#'+aoShow+'-holder .add-on-product').removeClass('selected');
 				$('#'+aoShow+'-holder input[name="'+aoShow+'"]').prop('checked', false);
 				$('#my-add-ons .ao-item').each(function(){
@@ -363,27 +369,22 @@ $('a.btn-finish-step2').click(function(evt) {
 	
 
 	$('.add-on-product').click(function(evt){
-				evt.preventDefault();
+				//evt.preventDefault();
 				var aoType = $(this).parent().attr('id');
-				var aoProduct = $(this).parent().attr('data-product-type');
-				if($(this).hasClass('selected') && aoProduct == 'thermostat'){
+				if($(this).hasClass('selected')){
 					$('#'+aoType+' input.ao-selected').prop('checked', false);
 					$('#'+aoType+' .add-on-product').removeClass('selected');
-				}else if($(this).hasClass('selected') && aoProduct == 'indoor-air-quality'){
-					$(this).children('input.ao-selected').prop('checked', false);
-					$(this).removeClass('selected');
-				}else if(aoProduct == 'indoor-air-quality'){
-					$(this).children('input.ao-selected').prop('checked', true);
-					$(this).addClass('selected');
 				}else{
 					$('#'+aoType+' input.ao-selected').prop('checked', false);
 					$('#'+aoType+' .add-on-product').removeClass('selected');
 					$(this).children('input.ao-selected').prop('checked', true);
 					$(this).addClass('selected');
 				}
-				
 	});
 	
+	$('.add-on-product input').click(function(){
+		$('.add-on-product').trigger('click');
+	});
 	
 	
 // step 4 finish 
@@ -405,8 +406,7 @@ $('a.btn-finish-step2').click(function(evt) {
 					var aoProductID = $(this).attr('data-product-id');
 					var aoProductCost = $(this).attr('data-product-cost');
 					aoPrice = aoPrice+parseInt(aoProductCost);
-
-					$('#my-add-ons .ao-info').append('<div class="ao-item" data-ao-cost="'+aoProductCost+'" data-ao-type="'+aoProductType+'">'+aoProductBrand+' '+aoProductID+' '+aoProductType+' $'+aoProductCost+'</div>');
+					$('#my-add-ons .ao-info').append('<div class="ao-item" data-ao-cost="'+aoProductCost+'" data-ao-type="'+aoProductType+'">'+aoProductBrand+' '+aoProductID+' '+aoProductType+'</div>');
 				}	
 			});
 		
@@ -433,14 +433,10 @@ $('a.btn-finish-step2').click(function(evt) {
 		$('#order-info-holder .'+myStep).html('');
 		
 		if(myStep=='existing' || myStep == 'home-questions'){
-			addCost = 0;	
-			$('#order-info-holder .total').attr('additional-cost', 0);	
 			$('.step2-content').attr('data-step2-additional-cost', 0);	
 		}
 		
 		if(myStep==3) {
-			prodPrice = 0;
-			$('#order-info-holder .total').attr('product-cost', 0 );
 			$('input#rp-selected').prop('checked', false);
 			$('.recommended-product').removeClass('selected');
 			
@@ -454,8 +450,6 @@ $('a.btn-finish-step2').click(function(evt) {
 		}
 		
 		if(myStep==4){
-			aoPrice = 0;
-			$('#order-info-holder .total').attr('ao-cost', 0 );	
 			$('.ao-checkbox-holder input[name="ao-product"]').prop('checked', false);
 			$('.ao-product-holder').addClass('hidden');
 			$('.ao-checkbox-holder, .add-on-product').removeClass('selected');
@@ -478,7 +472,6 @@ $('a.btn-finish-step2').click(function(evt) {
 				$(this).prop('checked', false);
 			});
 			$('#order-info-holder .'+backFrom).html('');
-			$('#my-product .product-type').html('');
 			$('.step2-content, #my-home').addClass('hidden');
 			$('.step1-content').removeClass('hidden');
 			changeStep(1);
@@ -492,52 +485,41 @@ $('a.btn-finish-step2').click(function(evt) {
 			$('#order-info-holder .'+backFrom).html('');
 			$('.existing-info-holder, .furnace-gravity, #my-existing').addClass('hidden');
 			$('.home-questions').removeClass('hidden');
-			$('.existing-info-holder .existing').addClass('hidden');
-			$('.existing-info-holder .install-time').removeClass('hidden');
 		}
 		
 		if(backFrom == 3){
-			addCost = 0;
 			$('input#rp-selected').prop('checked', false);
 			$('.recommended-product').removeClass('selected');
 			$('.more-options-btn').removeClass('hidden');
-			$('.step3-content > div, #my-selection').addClass('hidden');
+			$('.step3-content .btn-holders').addClass('hidden');
 			$('.step3-content').addClass('hidden');
 			$('.step3-content, .recommended-product').addClass('hidden');
 			$('.step2-content, .step2-content .existing-info-holder').removeClass('hidden');
 			$('#order-info-holder .total').attr('additional-cost', 0);
 			changeStep(2);
-			addTotalPrice();
 		}
 		
 		if(backFrom == 4){
-			prodPrice = 0;
 			$('.ao-checkbox-holder input').prop('checked', false);
-			$('.step4-content div').removeClass('selected');
-			$('.step4-content, .step4-content .btn-holders, #my-add-ons').addClass('hidden');
+			$('.step4-content, .step4-content .btn-holders').addClass('hidden');
 			$('.step3-content').removeClass('hidden');
 			$('#my-selection .order-info').html('');
-			$('#order-info-holder .total').attr('product-cost', 0 );
-			$('.step4-content .ao-product-holder').addClass('hidden');
 			changeStep(3);
-			addTotalPrice();
 		}
 		
 		if(backFrom == 5){
-			aoPrice = 0;
-			$('#order-info-holder .total').attr('ao-cost', 0 );
 			$('.step5-content').addClass('hidden');
 			$('.step4-content').removeClass('hidden');
 			$('.step4-content div').removeClass('selected');
 			$('.ao-product-holder input[type=checkbox]').prop('checked', false);
-			$('.ao-checkbox-holder input').prop('checked', false);
 			$('#my-add-ons .order-info').html('');
-			$('.step4-content .ao-product-holder').addClass('hidden');
-			$('.step4-content .btn-holders').addClass('hidden');
 			changeStep(4);
-			addTotalPrice();
+			
 		}
 		
+		
+		
+	
 	});
 		
 	
@@ -647,6 +629,7 @@ $('a.btn-finish-step2').click(function(evt) {
 		$('.step'+currStep+'-content').removeClass('hidden');
 
 		takeHome();
+		reportMe();	
 	}
 	
 	
@@ -670,6 +653,18 @@ $('a.btn-finish-step2').click(function(evt) {
 	}
 	
 
+function reportMe(){
+		console.debug('myProduct = '+myProduct);
+		console.debug('myBrand = '+myBrand);
+		console.debug('mySqFt = '+mySqFt);
+		console.debug('mySqFtNum = '+mySqFtNum);
+		console.debug('myGal = '+myGal);
+		console.debug('myHE = '+myHE);
+		console.debug('existingAddPrice = '+existingAddPrice);
+		console.debug('addCost = '+addCost);
+		console.debug('prodPrice = '+prodPrice);
+		console.debug('aoPrice = '+aoPrice);
+}
 
 	
 

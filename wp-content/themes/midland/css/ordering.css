@@ -45,15 +45,15 @@ label {
 
 .order-steps-holder {
 	height: 40px;
-	background: #e1e1e1;
+	background: #a7a7a7;
 	overflow: hidden;
 	border: 1px solid #a7a7a7;
-	width: 957px;
+	width: 958px;
 	margin-bottom: 20px;
 }
 
 .order-steps-holder ul {
-		width: 959px;
+		width: 980px;
 }
 
 .order-steps-holder ul li {
@@ -137,6 +137,15 @@ p.checkbox-holder {
 	padding-right: 20px;
 }
 
+.product-brand p.checkbox-holder {
+	float: none;
+	padding: 3px 20px 3px 0;
+}
+
+.product-brand p.checkbox-holder label {
+	padding-right: 5px;
+}
+
 p.checkbox-holder input {
 	margin-right: 10px;
 }
@@ -194,10 +203,10 @@ a.btn-more-options:hover {
 	margin-top: 20px;
 }	
 
-p.more-info,
-.existing-cost-explain {
-	font-size: 12px;
-	line-height: 14px;
+
+.existing-cost-explain p {
+	font-size: 14px;
+	line-height: 16px;
 	padding-bottom: 10px;
 }
 
@@ -231,10 +240,11 @@ input.ao-selected {
 }
 
 
-.recommended-product h3,
+.step3-content .recommended-product h3,
 .add-on-product h3 {
 	font-size: 15px;
 	text-transform: uppercase;
+	padding-top: 0;
 }
 
 .rp-title {
@@ -419,7 +429,7 @@ span.prodID {
 background: #666666;
 }
 
-p.order-disclaimer {
+.order-disclaimer p{
 	margin-bottom: 8px;
 }
 
@@ -431,3 +441,31 @@ p.error-msg {
 	line-height: 30px;
 	display: none;
 }	
+.order-thanks {
+	display: none;
+	padding: 0 25px 25px;
+}
+
+
+#place-order a.order-placed {
+	border: 1px solid #666666;
+  height: 30px;
+  overflow: hidden;
+  padding: 0 10px 0 25px;
+  margin: 0 0 0 10px;
+  line-height: 30px;
+	float: right;
+	color: #fff;
+	font-size: 15px;
+	background: #a7a7a7 url('../images/ordering/grey-spinner.gif') 4px 7px no-repeat;
+	-webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#place-order a.order-placed:hover {
+	cursor:default;
+}
+
+

@@ -60,10 +60,10 @@
 					</div>
 					<div class="step-product-holder product-brand hidden">	
 							<p class="step-instructions">Select what brand you would like to purchase <span></span>:</p>
-							<p class="checkbox-holder furnace air-conditioner combo"><input id="aire-flo-b0" type="radio" name="brand" value="AIRE-FLO"><label for="aire-flo-b0">AIRE-FLO: </label><?php the_field('aireflo_description'); ?></p>
-							<p class="checkbox-holder furnace air-conditioner combo"><input id="lennox-b0" type="radio" name="brand" value="LENNOX"><label for="lennox-b0">LENNOX: </label><?php the_field('lennox_description'); ?></p>
-							<p class="checkbox-holder boiler"><input id="slant-fin-b0" type="radio" name="brand" value="Slant-Fin"><label for="slant-fin-b0">Slant-Fin: </label><?php the_field('slant_fin_description'); ?></p>
-							<p class="checkbox-holder water-heater"><input id="state-b0" type="radio" name="brand" value="State"><label for="state-b0">State: </label><?php the_field('state_description'); ?></p>
+							<p class="checkbox-holder furnace air-conditioner combo"><input id="aire-flo-b0" type="radio" name="brand" value="AIRE-FLO"><label for="aire-flo-b0">AIRE-FLO</label></p>
+							<p class="checkbox-holder furnace air-conditioner combo"><input id="lennox-b0" type="radio" name="brand" value="LENNOX"><label for="lennox-b0">LENNOX</label></p>
+							<p class="checkbox-holder boiler"><input id="slant-fin-b0" type="radio" name="brand" value="Slant-Fin"><label for="slant-fin-b0">Slant-Fin</label></p>
+							<p class="checkbox-holder water-heater"><input id="state-b0" type="radio" name="brand" value="State"><label for="state-b0">State</label></p>
 							<div class="clear"></div>
 					</div>
 					<div class="step1-finish hidden" >
@@ -398,10 +398,17 @@
 							<p><b>Thermostats:</b> <?php the_field('thermostat_description'); ?></p>
 						</div>
 						<div class="ao-checkbox-holder clearfix">
-							<input id="iaq-check" type="checkbox" name="ao-product" value="indoor-air-quality">
-							<p><b>Indoor Air Quality:</b> <?php the_field('iaq_description'); ?></p>
+							<input id="filter-check" type="checkbox" name="ao-product" value="filter">
+							<p><b>Whole House Filters:</b> <?php the_field('filter_description'); ?></p>
 						</div>
-
+						<div class="ao-checkbox-holder clearfix">
+							<input id="air-exchanger-check" type="checkbox" name="ao-product" value="air-exchanger">
+							<p><b>Air to Air Exchangers:</b> <?php the_field('air_exchanger_description'); ?></p>
+						</div>
+						<div class="ao-checkbox-holder clearfix">
+							<input id="misc-check" type="checkbox" name="ao-product" value="miscellaneous">
+							<p><b>Miscellaneous Items:</b> <?php the_field('miscellaneous_description'); ?></p>
+						</div>
 						<div class="ao-checkbox-holder clearfix">
 							<input id="none-check" type="checkbox" name="ao-product" value="none">
 							<p><b>None Thanks</b></p>
@@ -414,11 +421,57 @@
 									while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 								<div class="add-on-product <?php the_field('square_footage'); ?>" data-product-cost="<?php the_field('product_price'); ?>" data-product-id="<?php the_title(); ?>" data-product-brand="<?php the_field('brand');?>" >	
 									<input class="ao-selected" type="checkbox" name="thermostat" value="<?php the_title(); ?>">
-									<h3 class="rp-title"><?php the_field('brand'); ?> <?php the_field('product_id'); ?> Thermostat</h3>
+									<h3 class="rp-title"><?php the_field('brand'); ?> <?php the_field('product_id'); ?> Thrmostat</h3>
 									<h3 class="total-cost">$<?php the_field('product_price'); ?></h3>
 									<div class="clear"></div>
 									<div class="rp-info-holders">
 										<img src="<?php the_field('product_image');?>" alt="<?php the_field('brand');?> furnace <?php the_field('product_ID');?>" />							
+										<p class="rp-snipit">
+											<?php 
+												the_field('product_snippit');
+												if( get_field('product_link')){ ?>
+													<a class="rp-learn-more-btn" href="<?php the_field('product_link');?>" target="_blank">...Learn More</a>
+												<?php } ?>
+										</p>	
+										<div class="clear"></div>
+									</div>	
+									<div class="btn-product first">Features
+										<div class="prod-info hidden">
+											<h3><?php the_field('brand'); ?> <?php the_field('product_id'); ?> Features</h3>
+											<?php the_field('product_information');?>
+										</div>
+									</div>
+									<div class="btn-product">Warranty Information
+										<div class="prod-info hidden">
+											<h3><?php the_field('brand'); ?> <?php the_field('product_id'); ?> Warranty</h3>
+											<?php the_field('product_warranty');?>
+										</div>
+									</div>
+									<div class="btn-product">Rebate Information
+										<div class="prod-info hidden">
+											<h3><?php the_field('brand'); ?> <?php the_field('product_id'); ?> Rebate</h3>
+											<?php the_field('product_rebate');?>
+										</div>
+									</div>
+									<?php if( get_field('product_brochure')){ ?>
+										<a class="btn-brochure" href="<?php the_field('product_brochure');?>" target="_blank" >Brochure</a>
+									<?php } ?>
+									<div class="clear"></div>
+							</div>
+						<?php endwhile; wp_reset_query(); ?>
+						<div class="clear"></div>
+					</div>
+					<div id="filter-holder" class="ao-product-holder hidden" data-product-type="filter">
+						<h3>Filters</h3>
+						<?php $custom_query = new WP_Query( array('post_type' => 'products', 'category_name' => 'filters', 'showposts' => -1 ) );
+									while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+								<div class="add-on-product" data-product-cost="<?php the_field('product_price'); ?>" data-product-id="<?php the_title(); ?>" data-product-brand="<?php the_field('brand');?>" >	
+									<input class="ao-selected" type="checkbox" name="filter" value="<?php the_title(); ?>">
+									<h3 class="rp-title"><?php the_field('brand'); ?> <?php the_field('product_id'); ?> Filter</h3>
+									<h3 class="total-cost">$<?php the_field('product_price'); ?></h3>
+									<div class="clear"></div>
+									<div class="rp-info-holders">
+										<img src="<?php the_field('product_image');?>" alt="<?php the_field('brand');?> Filter <?php the_field('product_ID');?>" />							
 										<p class="rp-snipit">
 											<?php 
 												the_field('product_snippit');
@@ -459,7 +512,7 @@
 						<?php $custom_query = new WP_Query( array('post_type' => 'products', 'category_name' => 'indoor-air-quality', 'showposts' => -1 ) );
 								while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 								<div class="add-on-product" data-product-cost="<?php the_field('product_price'); ?>" data-product-id="<?php the_title(); ?>" data-product-brand="<?php the_field('brand');?>" >	
-									<input class="ao-selected" type="checkbox" name="iaq-product" value="<?php the_title(); ?>">
+									<input class="ao-selected" type="checkbox" name="air-exchanger" value="<?php the_title(); ?>">
 									<h3 class="rp-title"><?php the_field('brand'); ?> <?php the_field('product_id'); ?></h3>
 									<h3 class="total-cost">$<?php the_field('product_price'); ?></h3>
 									<div class="clear"></div>
@@ -568,25 +621,10 @@
 	$(function () {
 	
 		// clear all data on page when loaded
-		$('input[type=checkbox]').each(function(){
-			$(this).prop('checked', false);
-		});
-		
-		$('input[type=radio]').each(function(){
-			$(this).prop('checked', false);
-		});
-		
-		$('.order-holder div').each(function(){
-			$(this).removeClass('selected');
-		});
-		
+		$('input[type=checkbox]').prop('checked', false);
+		$('input[type=radio]').prop('checked', false);
+		$('div, .recommended-product, .ao-checkbox-holder, .add-on-product').removeClass('selected');
 		$('.order-info').html('');
-		
-		$('.step3-content div').each(function(){
-			if($(this).attr('data-he')==''){
-				$(this).attr('data-he', 0);
-			}	
-		});
 		
 		
 		orderPageActions();
