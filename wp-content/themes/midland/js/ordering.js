@@ -162,6 +162,11 @@ function orderPageActions(){
 				$('#order-info-holder .'+myQuestion).addClass('addCost');
 				}
 				
+			if($(this).hasAttr('data-added')){
+				var myAdd = $(this).attr('data-added');
+				$('#order-info-holder .'+myQuestion).append(' '+myAdd);
+			}	
+				
 			if($(this).attr('name')=='gallons'){
 				myGal = $(this).val();
 			}
@@ -363,7 +368,7 @@ $('a.btn-finish-step2').click(function(evt) {
 	
 
 	$('.add-on-product').click(function(evt){
-				evt.preventDefault();
+				//evt.preventDefault();
 				var aoType = $(this).parent().attr('id');
 				var aoProduct = $(this).parent().attr('data-product-type');
 				if($(this).hasClass('selected') && aoProduct == 'thermostat'){
