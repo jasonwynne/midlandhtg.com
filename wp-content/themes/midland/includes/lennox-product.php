@@ -1,13 +1,12 @@
 <!-- this is the insert for products -->
 
-<?php 
-	global $post; 
+<?php global $post; 
 	if ( is_page( 'Furnaces' ) ) { 
 		$productID = 2;
 	} elseif ( is_page( 'Air Conditioner' )) {
 		$productID = 1;	
 	} else { 
-		$productID = 2;
+	
 	} 
 ?>
 

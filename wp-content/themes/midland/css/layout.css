@@ -131,16 +131,27 @@ a{
 .top-menu ul li.facebook a:hover{
 	background-position: 8px -39px;
 }
-
+/* 
 .tagline{
 	position: absolute;
 	color:#ff0012;
 	float: left;
 	font-family: 'LatoBold', arial, san-serif;
 	font-size: 1.8em;
-	top: 82px;
-	left: 290px;
+	top: 50px;
+	left: 450px;
 }
+*/
+
+.tagline{
+	color:#ff0012;
+	font-family: 'LatoBold', arial, san-serif;
+	font-size: 1.8em;
+	width: 60px;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
 .phone-holder{
 	text-align: right;
 	float: right;
@@ -1146,8 +1157,8 @@ a.publication-pdf{
 	}
 	.tagline{
 		font-size: 1.4em;
-		top: 120px;
-		left: 62px;
+		/* top: 120px;
+		left: 62px; */
 	}
 	.form-holder h1 {
     	font-size: 3.2em;
@@ -1332,8 +1343,9 @@ a.publication-pdf{
 	}
 	.tagline{
 		font-size: 1.2em;
-		top: 120px;
-		left: 25px;
+		/*top: 120px;
+		left: 25px;*/
+		display: none;
 	}
 	
 	.phone-holder{

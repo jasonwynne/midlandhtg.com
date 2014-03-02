@@ -1,0 +1,2 @@
+[01-May-2013 00:11:40 UTC] PHP Warning:  unlink(pdf/midland_order.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/midland/public_html/wp-content/themes/midland/create-pdf.php on line 151
+[22-Jan-2014 10:29:51 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/midland/public_html/wp-content/themes/midland/404.php on line 1

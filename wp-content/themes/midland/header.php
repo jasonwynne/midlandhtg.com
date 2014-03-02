@@ -61,7 +61,14 @@ $(document).ready(function() {
 		<div class="phone-holder">
 			<a href="tel:6128693213">612-869-3213</br><span>Same Day Repair Service</span></a>
 		</div>
-		<div class="tagline">Warming Winter and Cooling Summer Since 1950</div>
+		<div class="tagline">		
+		
+<!-- REview button commented out on 12/15 jason
+	<a href="https://www.customerlobby.com/reviews/26247/midland-heating-and-air-conditioning/" onclick="window.open('https://www.customerlobby.com/reviews/26247/midland-heating-and-air-conditioning/', 'ReviewPage', 'statusbar=no,menubar=no,toolbar=no,scrollbars=yes,resizable=yes,width=540, height=575,left=570,top=200,screenX=570,screenY=200'); return false;" target="_blank"><img src="https://www.customerlobby.com/ctrack-26247" alt="Statistics" border="0" style="display: none;" /><img alt="Review of Midland Heating and Air Conditioning" src="https://www.customerlobby.com/logo-serve?id=32" border="0" /></a>
+ -->
+		
+		
+		</div>
 		<div class="clear"></div>
 		<div class="main-menu">
 			<?php wp_nav_menu( array( 'menu' => 'main-menu' ) );?>
