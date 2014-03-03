@@ -1,0 +1,111 @@
+.entry-header{margin-right: 0;}
+.site-content .entry-header, .site-content .entry-content{  max-width: 608px;
+    margin: 0;}
+.pagination{ display:block; text-align:right;}
+.pagination a{margin-left:10px;}
+a.disabled {color: #808080 ; pointer-events: none;cursor: default;
+}
+.slide .logo-block{display: inline-block;
+    float: left;
+    margin-right: 20px;
+    vertical-align: top;
+    width: 45px;}
+.dec-block{display: inline-block;
+   float: left;
+    vertical-align: top;
+    width: 87%;}
+.rating-block{ display: inline-block;
+    vertical-align: top;}
+	.entry-content .rating {
+    display: inline-block;
+    padding-top: 0px;
+    text-align: right;
+   width: 64px;
+}
+.entry-content a, .entry-summary a, .page-content a, .comment-content a {
+    text-decoration: none;
+}
+.cust-name { float: left;
+    width: 100%;  font-weight: bold; padding-bottom: 5px;}
+	.dec{float: left;
+    width: 100%;  padding-top: 5px;}
+.business_name{font-size: 28px; line-height:normal;}
+.business_add{color: #898989; line-height:normal;}
+.total_rating_section .rating{ 
+    display: inline-block;
+    line-height: normal;
+    margin-right: 5px;
+    margin-top: 9px;
+    vertical-align: top;
+    width: auto;}
+.total-rating {
+   color: #428BCA;
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: normal;
+	
+}
+#mainContent{position:relative;}
+.singlePost{margin:0px;}
+.dec-block .rating img{ width: 80px !important;}
+.write-review{ background: url("../images/write-btn.png") no-repeat scroll 0 0 ;
+padding-top: 7px;
+    color: #FFFFFF !important;
+    display: inline-block;
+    font-size: 13px;
+    height: 29px;
+  padding-left: 14px;
+   line-height:normal;
+    text-align: center;
+    text-decoration: none !important;
+    width: 120px; position:absolute; right: 20px;  top: 10px;}
+	.write-review:hover{color: #FFFFFF!important;}
+	.entry-content{position:relative;}
+	.slider1{display:inline-block; padding-bottom:15px;}
+.dec-block .date{display: inline-block;
+    padding-left: 5px;
+    padding-top: 3px;}
+.total-review{color: #898989;
+    display: inline-block;
+    height: 29px;
+    line-height: normal;
+    padding-top: 11px;
+    vertical-align: top;
+    width: 111px;}
+	.slide{  float: left;
+    width: 100%; padding-top: 15px;}
+	img{   border: medium none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;}
+.total_rating_section{border-bottom: 1px solid #CCCCCC; padding-bottom: 10px;}
+.rating{float:left;}
+.top-section-wp{position:relative;}
+@media (max-width: 1023px){
+	
+	.dec-block{width:57%;} 
+	.content-sidebar{padding: 0 10px;}
+	}
+@media (max-width: 990px) {
+	.cust-name{ width: 100%;}
+	.dec-block{width:80%;} 
+	.content-sidebar{padding: 0 10px;}
+	}
+@media (max-width: 766px) {
+	.write-review{right: 20px;
+    top: -4px;}
+	.business_name {
+    font-size: 24px;
+}
+	.dec-block{width:100%;} 
+	.content-sidebar{padding: 0 10px;}
+	}
+	@media (max-width: 360px) {
+		.write-review {
+    right: 0;
+    top: -34px;
+}
+		
+		}
+	

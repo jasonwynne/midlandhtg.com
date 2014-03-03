@@ -1,0 +1,63 @@
+#reputation_bug_div
+{color:#444444;
+border: 1px solid #E5E5E5;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+background:#fff;
+min-width:96%;
+display:inline-block;
+margin-top:20px;
+padding:20px;
+}
+
+.form-group
+{margin-bottom:25px;
+display:inline-block;
+width:100%;}
+
+.form-group .inputbox {
+   display: inline-block;
+    position: relative;
+    width: 25%;
+}
+
+.form-group .labelbox {
+    float: left;
+    width: 10%;
+	min-width:150px;
+	display:inline-block;
+}
+
+.form-group .labelbox span
+{color:#ff0000;}
+
+.form-group .inputbox input[type=text], .form-group .inputbox input[type=password], .form-group .inputbox textarea
+{display:inline-block;
+width:100%;}
+
+.form-group .inputbox input[type=text], .form-group .inputbox input[type=password]
+{min-height:35px;
+display:block;}
+
+.form-group .inputbox textarea
+{min-height:100px;}
+
+.form-group .inputbox > span {
+    left: 0;
+    position: absolute;
+}
+
+.form-group .inputbox > span .error
+{font-size:12px;
+color:#ff0000;}
+
+input[type=submit]
+{min-width:100px;
+}
+
+.success_message
+{background:#c3ffcd;
+color:#0f6a1e;
+padding:10px;
+width:590px;
+margin-bottom:0px;}
+

@@ -3,6 +3,8 @@
 require('../../../wp-load.php' );
 include_once('phpToPDF.php');
 
+
+
 $today = date('F j, Y');
 $name = 	$_POST["name"];
 $address = $_POST["address"];
@@ -10,7 +12,7 @@ $phone = $_POST["phone"];
 $city = $_POST["city"];
 $zip = $_POST["zip"];
 $mainProd = $_POST["mainProd"];
-$mainProdID = $_POST["mainProdID"];
+$mainProdID = $_POST["mainProd"];
 $mainProdCost = $_POST["mainProdCost"];
 $prodAOCost = $_POST["prodAOCost"];
 $prodAOs = $_POST["prodAOs"];
@@ -21,7 +23,7 @@ $totalCost = $_POST["totalCost"];
 $email = $_POST["email"];
 $myHome = $_POST["myHome"];
 
-
+if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["mainProd"])){
 	
 $html = '<!DOCTYPE html>
 					<html lang="en">
@@ -175,7 +177,9 @@ $html = '<!DOCTYPE html>
  	
  		echo $isThere;
 
-		
+}else{
+  echo 'this is in error';;
+}	
 		
 
 ?>
