@@ -1,4 +1,5 @@
 <!-- form section of footer -->
+<?php if(is_page('home')){ ?>
 <div id="footer" class="wrapper top">
 	<div class="center">
 		<div class="form-holder">
@@ -10,8 +11,9 @@
 		<div class="clear"></div>
 	</div>
 </div>
-
+<?php } ?>
 <!-- middle section of footer -->
+
 <div id="footer" class="wrapper middle">
 	<div class="center">
 		<div class="product-holder">

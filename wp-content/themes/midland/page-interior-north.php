@@ -19,7 +19,6 @@
 		<div class="holder-right">
 			<?php include(TEMPLATEPATH."/includes/sidebar-interior.php");	?>
 		</div>
-		<?php get_sidebar(); ?>
 		<div class="clear"></div>
 	</div>
 </div>		

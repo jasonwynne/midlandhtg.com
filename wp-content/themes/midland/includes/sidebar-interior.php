@@ -41,8 +41,22 @@
   <?php endif; ?>
   
   <div class="reviews">
-  <!-- <?php do_shortcode('[reviews_all]'); ?> -->
+    <?php the_widget( 'PagesLink'); ?> 
  
   </div>
   
 </div>
+
+<script type="text/javascript">
+
+	$(function () {
+	  $('.sin-linked').click(function(){
+	    var $sinLinked = $(this);
+	    var $linkTo = $sinLinked.attr('data-link');
+	    location.href =  $linkTo;  
+	  });
+	  
+	}); // end doc ready for home page
+		
+</script>
+	
