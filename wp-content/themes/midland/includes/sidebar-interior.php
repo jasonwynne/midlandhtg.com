@@ -40,11 +40,14 @@
   </div>
   <?php endif; ?>
   
+  <?php if (is_page('reviews')){
+  
+  }else{ ?>
+  
   <div class="reviews">
     <?php the_widget( 'PagesLink'); ?> 
- 
   </div>
-  
+  <?php } ?>
 </div>
 
 <script type="text/javascript">

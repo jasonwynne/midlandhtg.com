@@ -30,7 +30,7 @@ $(document).ready(function(){
 /// home slideshow solving scope problems	
 	
 	
-	var count = $(".slide").length;
+	var count = $(".hhslide").length;
 	var totalCount = count-1;
 	var currSlide = 0;
 	var nextSlide ;
@@ -41,7 +41,7 @@ $(document).ready(function(){
 	var middleZ = 250;
 	var bottomZ = 0;
 	
-	$(".slide").each(function(i) {
+	$(".hhslide").each(function(i) {
 		$(this).addClass('slide'+i);
 		$(this).hide();
 		var numMe = i+1;

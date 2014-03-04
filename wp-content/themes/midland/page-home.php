@@ -12,7 +12,7 @@
 		</div>
 		<div class="holder-slideshow">
 			<?php while(the_repeater_field('home_slideshow')): ?>
-			<div class="slide <?php the_sub_field('slide_position'); ?>">
+			<div class="hhslide <?php the_sub_field('slide_position'); ?>">
 				<div class="slide-copy">
 					<?php the_sub_field('slide_copy'); ?>
 					<div class="btn-slide"><a href="<?php the_sub_field('slide_link'); ?>"><?php the_sub_field('button_text'); ?></a></div>

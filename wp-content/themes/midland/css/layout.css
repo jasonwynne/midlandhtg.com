@@ -544,7 +544,7 @@ padding: 0 10px;
 	padding: 20px 0 0 20px;
 }
 
-.slide{
+.hhslide{
 	position: absolute;
 	z-index: 0;
 }
@@ -573,12 +573,12 @@ padding: 0 10px;
 	padding: 10px 0;
 }
 
-.slide.left .slide-copy{
+.hhslide.left .slide-copy{
 	width: 36%;
 	padding: 40px 0 0 60%;
 }
 
-.slide.right .slide-copy{
+.hhslide.right .slide-copy{
 	width: 60%;
 	padding: 40px 0 0 5%;
 }
@@ -1212,6 +1212,11 @@ Template Interior North made 3/2/2014
 }
 
 
+.reviews,
+#rb_list,
+.top-section-wp {
+  font-size: 14px;
+}
 
 
 /*******************************************************************************************************  Media Quieries */
