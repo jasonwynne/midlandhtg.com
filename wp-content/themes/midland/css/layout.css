@@ -191,6 +191,7 @@ a{
 	position: absolute;
 	bottom: 3px;
 	padding-left: 20px;	
+	width: 100%;
 }
 .main-menu ul li{
 	float: left;
@@ -247,7 +248,7 @@ ul.sub-menu{
 	z-index: -1;
 	-webkit-box-shadow: 1px 3px 5px 0px rgba(00, 00, 00, .75);
 	box-shadow: 1px 3px 5px 0px rgba(00, 00, 00, .75);
-               
+  min-width: 190px;             
 }
 
 .main-menu ul li:hover ul.sub-menu{
@@ -340,13 +341,14 @@ ul.sub-menu li a:hover{
 }
 
 .btn-submit-mid{
-	width: 87px;
+	width: 87px !important;
 	height: 34px;
 	overflow: hidden;
 	text-indent: -9999px;
 	background: transparent url('../images/footer/submit-btn.png') 0 0 repeat-x;
 	border: 0;
 	padding: 0;
+	cursor: pointer;
 }
 
 .btn-submit-mid:hover{
@@ -715,8 +717,7 @@ padding: 0 10px;
 .main-content ul li{
 	padding: 5px;
 	font-size: 1.3em;
-	line-height: 1.4em;
-	font-family: 'LatoBold';
+	line-height: 1.2em;
 }
 
 
@@ -1008,6 +1009,11 @@ a.publication-pdf{
 
 /*******************************************************************************************************  gallery*/
 
+.content-holder-gallery {
+  width: 622px;
+  margin: 0 auto;
+}
+
 .gallery-image-holder{
 	width: 622px;
 	height: 459px;
@@ -1159,12 +1165,12 @@ Template Interior North made 3/2/2014
 
 .holder-left {
   float: left;
-  width: 73%;
+  width: 700px;
 }
 
 .holder-right {
   float: right;
-  width: 27%;
+  width: 259px;
 }
 
 .sidebar-right {
@@ -1193,6 +1199,10 @@ Template Interior North made 3/2/2014
 	background: #ff7b84;
 }
 
+#menu-interior-north-sidebar li.current-menu-item {
+  display: none;
+}
+
 .side-image-links {
   margin-bottom: 20px;
 }
@@ -1202,7 +1212,17 @@ Template Interior North made 3/2/2014
   -webkit-box-shadow: 0px 2px 5px 0px rgba(00, 00, 00, .5);
 	box-shadow: 0px 2px 5px 0px rgba(00, 00, 00, .5);
 	margin-top: 10px;
-	height: 100px;
+
+}
+
+.promo-page-single {
+  width: 257px;
+  float: left;
+  margin: 10px;
+}
+
+.li-single img {
+  display: block;
 }
 
 .sin-linked:hover {
@@ -1218,6 +1238,63 @@ Template Interior North made 3/2/2014
   font-size: 14px;
 }
 
+
+.pull-left {
+  float: left
+}
+
+
+.sch-appt-holder{}
+.sch-appt-holder input {
+  width: 300px;
+}
+
+.appt-type select,
+.appt-time select {
+  width: 195px;
+}
+
+.appt-date input {
+  width: 195px;
+}
+
+.prefer-contact select {
+  width: 175px;
+}
+
+.state select {
+  width: 145px;
+}
+
+.zip input {
+  width: 131px;
+}
+
+.address input {
+  width: 495px;
+}
+
+.message textarea {
+  width: 620px;
+  height: 120px;
+  padding: 5px;
+  resize: none;
+}
+
+.sch-appt-thanks {
+  display: none;
+}
+
+.btn-submit-appt{
+	width: 87px !important;
+	height: 34px;
+	overflow: hidden;
+	text-indent: -9999px;
+	background: transparent url('../images/footer/submit-btn.png') 0 0 repeat-x;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+}
 
 /*******************************************************************************************************  Media Quieries */
 

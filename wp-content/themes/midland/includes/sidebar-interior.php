@@ -4,41 +4,44 @@
     <?php wp_nav_menu( array( 'menu' => 'interior-north-sidebar' ) );?>
   </div>
   
-  <?php if(get_field('int_sidebar', 'options')): ?>
-  <div class="side-image-links">
+  <?php if (is_page('lennox-promotions') && $isLennoxPromo == false): ?>
+    <?php if(get_field('int_sidebar', 'options')): ?>
+    <div class="side-image-links">
   
-  <?php while(has_sub_field('int_sidebar', 'options')): 
-    $siImage = get_sub_field('si_image', 'options'); 
+    <?php while(has_sub_field('int_sidebar', 'options')): 
+      $siImage = get_sub_field('si_image', 'options'); 
     
-    $pageLink = get_sub_field('page_link', 'options'); 
-    $offLink = get_sub_field('offsite_link', 'options');  
+      $pageLink = get_sub_field('page_link', 'options'); 
+      $offLink = get_sub_field('offsite_link', 'options');  
     
-    if($pageLink !=""){
-      $hasLink = $pageLink;
-      $linkType = "page";
-    }elseif($offLink !=""){
-      $hasLink = $offLink;
-      $linkType = "offsite";
-    }else{
-       $hasLink = "";
-    }
+      if($pageLink !=""){
+        $hasLink = $pageLink;
+        $linkType = "page";
+      }elseif($offLink !=""){
+        $hasLink = $offLink;
+        $linkType = "offsite";
+      }else{
+         $hasLink = "";
+      }
     
    
     
-    if($hasLink != ""){
-    ?>
-    <div class="li-single sin-linked" data-link="<?php echo $hasLink ?>" data-type="<?php echo $linkType ?>">
-      <img alt="<?php echo $siImage['alt']; ?>" title="<?php echo $siImage['title']; ?>" src="<?php echo $siImage['url']; ?>" />
-    </div>
-    <?php }else{ ?>
-    <div class="li-single">
-      <img alt="<?php echo $siImage['alt']; ?>" title="<?php echo $siImage['title']; ?>" src="<?php echo $siImage['url']; ?>" />
-    </div>
-    <?php } ?>
-  <?php endwhile; ?>
+      if($hasLink != ""){
+      ?>
+      <div class="li-single sin-linked" data-link="<?php echo $hasLink ?>" data-type="<?php echo $linkType ?>">
+        <img alt="<?php echo $siImage['alt']; ?>" title="<?php echo $siImage['title']; ?>" src="<?php echo $siImage['url']; ?>" />
+      </div>
+      <?php }else{ ?>
+      <div class="li-single">
+        <img alt="<?php echo $siImage['alt']; ?>" title="<?php echo $siImage['title']; ?>" src="<?php echo $siImage['url']; ?>" />
+      </div>
+      <?php } ?>
+    <?php endwhile; ?>
   
-  </div>
+    </div>
+    <?php endif; ?>
   <?php endif; ?>
+  
   
   <?php if (is_page('reviews')){
   
@@ -56,7 +59,12 @@
 	  $('.sin-linked').click(function(){
 	    var $sinLinked = $(this);
 	    var $linkTo = $sinLinked.attr('data-link');
-	    location.href =  $linkTo;  
+	    var linkType = $sinLinked.attr('data-type');;
+	    if(linkType == 'offsite'){
+	      window.open($linkTo);
+	    }else{
+	      location.href =  $linkTo;  
+	    }
 	  });
 	  
 	}); // end doc ready for home page

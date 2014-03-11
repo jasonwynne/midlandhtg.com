@@ -144,9 +144,9 @@
 						</div>
 						<div class="existing furnace-gravity hidden">
 							<p class="step-instructions">How many pipes come off the main body of your gravity furnace?</p>
-							<p class="checkbox-holder"><input id="pipes1" type="radio" name="pipes" value="3-5" data-additional-cost="1462"><label for="pipes1">3-5</label></p>
-							<p class="checkbox-holder"><input id="pipes2" type="radio" name="pipes" value="6-8" data-additional-cost="2640"><label for="pipes2">6-8</label></p>
-							<p class="checkbox-holder"><input id="pipes3" type="radio" name="pipes" value="9-11" data-additional-cost="3620"><label for="pipes3">9-11</label></p>
+							<p class="checkbox-holder"><input id="pipes1" type="radio" name="pipes" value="3-5" data-additional-cost="2260"><label for="pipes1">3-5</label></p>
+							<p class="checkbox-holder"><input id="pipes2" type="radio" name="pipes" value="6-8" data-additional-cost="3140"><label for="pipes2">6-8</label></p>
+							<p class="checkbox-holder"><input id="pipes3" type="radio" name="pipes" value="9-11" data-additional-cost="4280"><label for="pipes3">9-11</label></p>
 							<div class="clear"></div>
 						</div>
 						<div class="existing boiler hidden">

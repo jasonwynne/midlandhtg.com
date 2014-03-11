@@ -141,16 +141,22 @@ $(document).ready(function(){
 
 	$('li:first-child').addClass('first-item');
 	$('li:last-child').addClass('last-item');	
+	
+
 
 });// END doc ready
 
 
-function callMe(data){
-	if (data.mailSent === true) {
+function callMe(){
 		$('.wpcf7-form').hide();  
 		$('.footer-thanks').show();  
-	}
 }// END callMe 
+
+
+function scheduleMade(){
+		$('.sch-appt-holder').hide();  
+  	$('.sch-appt-thanks').show();
+}
 
 
 function setFooterHolderHeights(){

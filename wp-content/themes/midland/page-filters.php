@@ -6,7 +6,7 @@
 
 <div id="page" class="wrapper default-template">
 	<div class="center">
-		<div class="content-right">
+		<div class="holder-left">
 			<div class="main-content">
 				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				  <?php the_content(); ?>
@@ -82,8 +82,8 @@
 				<div class="back-top"><a id="takeBack">back to top</a></div>
 			</div>
 		</div>
-		<div class="content-left">
-			<?php include(TEMPLATEPATH."/includes/sidebar-all.php");	?>
+		<div class="holder-right">
+			<?php include(TEMPLATEPATH."/includes/sidebar-interior.php");	?>
 		</div>
 		<div class="clear"></div>
 	</div>

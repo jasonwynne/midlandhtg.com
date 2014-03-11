@@ -6,7 +6,7 @@
 
 <div id="page" class="wrapper default-template">
 	<div class="center">
-		<div class="content-right">
+		<div class="content-holder-gallery">
 			<div class="main-content">
 				<h1><?php the_field('gallery_title'); ?></h1>
 				<div class="gallery-image-holder">
@@ -27,9 +27,7 @@
 				<div class="back-top"><a id="takeBack">back to top</a></div>
 			</div>
 		</div>
-		<div class="content-left">
-			<?php include(TEMPLATEPATH."/includes/sidebar-all.php");	?>
-		</div>
+
 		<div class="clear"></div>
 	</div>
 </div>		
