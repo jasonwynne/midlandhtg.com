@@ -4,7 +4,11 @@
     <?php wp_nav_menu( array( 'menu' => 'interior-north-sidebar' ) );?>
   </div>
   
-  <?php if (is_page('lennox-promotions') && $isLennoxPromo == false): ?>
+  <?php if (is_page('lennox-promotions')){ 
+  
+  }else{?>
+  
+  
     <?php if(get_field('int_sidebar', 'options')): ?>
     <div class="side-image-links">
   
@@ -40,7 +44,7 @@
   
     </div>
     <?php endif; ?>
-  <?php endif; ?>
+  <?php } ?>
   
   
   <?php if (is_page('reviews')){
