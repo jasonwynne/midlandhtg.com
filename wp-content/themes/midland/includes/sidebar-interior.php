@@ -52,7 +52,7 @@
   }else{ ?>
   
   <div class="reviews">
-    <?php the_widget( 'PagesLink'); ?> 
+    <?php the_widget('PagesLink'); ?> 
   </div>
   <?php } ?>
 </div>

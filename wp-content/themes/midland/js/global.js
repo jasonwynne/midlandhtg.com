@@ -25,6 +25,8 @@ $(document).ready(function(){
 		slideTimer.stop();
 	}
 	
+  $('.current_page_item').parent().parent().addClass('top-selected');
+
 
 
 /// home slideshow solving scope problems	
